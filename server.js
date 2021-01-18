@@ -20,6 +20,9 @@ app.post("/invite/send/:id", (req, res) => {
 app.post("/invite/get/:id", (req, res) => {
   res.json({});
 });
+app.post("/invite/accept/:id", (req, res) => {
+  res.json({});
+});
 
 app.post("/getshared/:id", (req, res) => {
   res.json({});
