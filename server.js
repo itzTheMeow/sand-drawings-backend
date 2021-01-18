@@ -37,7 +37,7 @@ const listener = server.listen(process.env.PORT, function () {
   console.log("Your app is listening on port " + listener.address().port);
 });
 
-const io = require("socket.io")(server);
+/*const io = require("socket.io")(server);
 
 io.on("connection", (socket) => {
   console.log("Socket connected!");
@@ -79,4 +79,4 @@ io.on("connection", (socket) => {
     console.log(returned + "e");
     callback(returned);
   });
-});
+});*/
