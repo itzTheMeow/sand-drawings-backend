@@ -14,6 +14,13 @@ app.get("/", (req, res) => {
   res.json({ STATUS: "ONLINE" });
 });
 
+app.post("/invite/send/:id", (req, res) => {
+  res.json({});
+});
+app.post("/invite/get/:id", (req, res) => {
+  res.json({});
+});
+
 app.get("/board/:id", (req, res) => {
   let id = req.params.id;
   if (!Number(id)) return res.json({ error: "Invalid board ID.", code: "ID_NOT_NUMBER" });
