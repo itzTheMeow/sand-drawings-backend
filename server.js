@@ -6,24 +6,6 @@ const LZUTF8 = require("lzutf8");
 
 app.use(express.static("public"));
 
-let index = String(fse.readFileSync("public/index.html"));
-
-let indexS = "";
-let indexa = index.split("<!--$-->");
-indexa.forEach((i) => {
-  if (indexa.indexOf(i) % 2 == 0) indexS += i;
-});
-
-let indexF = "";
-let indexA = indexS.split("//$//");
-indexA.forEach((i) => {
-  if (indexA.indexOf(i) % 2 == 0) indexF += i;
-});
-
-fse.writeFileSync("public/offline.html", indexF);
-
-app.get("/save", function (request, response) {
-  response.sendFile(__dirname + "/public/offline.html");
 });
 app.get("/board/*", function (request, response) {
   if (request.headers.origin)
