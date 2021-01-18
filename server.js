@@ -5,12 +5,12 @@ const fs = require("fs-extra");
 const LZUTF8 = require("lzutf8");
 
 });
-app.get("/board/*", function (request, response) {
-  if (request.headers.origin)
-    response.setHeader("Access-Control-Allow-Origin", request.headers.origin);
-  response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
-  response.sendFile(__dirname + "/boards/" + request.path.split("/board/")[1] + ".json");
+app.get("/board/:id", function (request, response) {
+  let id = req.params.id;
+  if (!Number(id)) return res.json({ error: "Invalid board ID.", code: "ID_NOT_NUMBER" });
+  res.json({});
+  //res.sendFile(__dirname + "/boards/" + req.params.id);
 });
 
 const listener = server.listen(process.env.PORT, function () {
