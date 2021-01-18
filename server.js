@@ -1,9 +1,8 @@
 const express = require("express");
 const app = express();
 const server = require("http").createServer(app);
-const fse = require("fs-extra");
+const fs = require("fs-extra");
 const LZUTF8 = require("lzutf8");
-const fs = require("fs");
 
 app.use(express.static("public"));
 
@@ -62,7 +61,7 @@ io.on("connection", (socket) => {
     let compressed = LZUTF8.compress(JSON.stringify(data), {
       outputEncoding: "StorageBinaryString",
     });
-    fse.outputFile("boards/" + ID + ".json", compressed);
+    fs.outputFile("boards/" + ID + ".json", compressed);
     console.log("Created file boards/" + ID + ".json!");
   });
   socket.on("import", (d) => {
