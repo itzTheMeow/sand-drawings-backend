@@ -10,7 +10,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/board/:id", function (request, response) {
+app.get("/board/:id", (req, res) => {
   let id = req.params.id;
   if (!Number(id)) return res.json({ error: "Invalid board ID.", code: "ID_NOT_NUMBER" });
   res.json({});
