@@ -19,7 +19,8 @@ app.get("/board/:id", function (request, response) {
 
 const listener = server.listen(6500, function () {
   let addr = listener.address();
-  console.log(`Listening at http://${addr.address}:${addr.port}/`);
+  console.log(addr);
+  console.log(`Listening at http://localhost:${addr.port}/`);
 });
 
 /*const io = require("socket.io")(server);
