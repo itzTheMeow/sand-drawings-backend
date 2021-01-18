@@ -17,8 +17,9 @@ app.get("/board/:id", function (request, response) {
   //res.sendFile(__dirname + "/boards/" + req.params.id);
 });
 
-const listener = server.listen(process.env.PORT, function () {
-  console.log("Your app is listening on port " + listener.address().port);
+const listener = server.listen(6500, function () {
+  let addr = listener.address();
+  console.log(`Listening at http://${adr.address}:${adr.port}/`);
 });
 
 /*const io = require("socket.io")(server);
