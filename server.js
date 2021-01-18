@@ -4,8 +4,6 @@ const server = require("http").createServer(app);
 const fs = require("fs-extra");
 const LZUTF8 = require("lzutf8");
 
-app.use(express.static("public"));
-
 });
 app.get("/board/*", function (request, response) {
   if (request.headers.origin)
