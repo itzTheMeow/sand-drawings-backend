@@ -19,7 +19,6 @@ app.get("/board/:id", function (request, response) {
 
 const listener = server.listen(6500, function () {
   let addr = listener.address();
-  console.log(addr);
   console.log(`Listening at http://localhost:${addr.port}/`);
 });
 
