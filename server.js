@@ -4,6 +4,10 @@ const server = require("http").createServer(app);
 const fs = require("fs-extra");
 const LZUTF8 = require("lzutf8");
 
+app.use((req, res, next) => {
+  if (req.headers.origin) res.setHeader("Access-Control-Allow-Origin", req.headers.origin);
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
 });
 
 app.get("/board/:id", function (request, response) {
